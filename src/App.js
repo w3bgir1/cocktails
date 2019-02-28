@@ -3,17 +3,19 @@ import './App.css'
 import CategoriesListContainer from './components/CategoriesListContainer'
 import CategorieImagesContainer from './components/CategorieImagesContainer'
 import { Route } from 'react-router-dom'
+import CocktailRecipeContainer from './components/CocktailRecipeContainer';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-        <h1>Cocktail categories</h1>
+        <h1>Wanna drink?</h1>
         </header>
         <main>
          <Route exact path="/" component={CategoriesListContainer} />
-         <Route path="/:categorie" component={CategorieImagesContainer} />
+         <Route path="/recipe/:id" component={CocktailRecipeContainer} />
+         <Route path="/category/:category" component={CategorieImagesContainer} />
         </main>
       </div>
     )

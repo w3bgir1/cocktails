@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 export default class CategoriesList extends Component {
 
-    renderCategorie = (categorie) => {
+    renderCategory = (category) => {
       return (
-          <li key={categorie}>
-              <Link to={ `/${categorie}` }>{categorie}</Link>
+          <li key={category}>
+              <Link to={ `/category/${category}` }>{category}</Link>
           </li>
        )
     }
@@ -14,14 +14,14 @@ export default class CategoriesList extends Component {
     render() {
       const { categories } = this.props
       return (
-        <div className="categorie-list">
-          <h1>Categories list</h1>
+        <div className="category-list">
+          <h2>Categories list</h2>
   
           { !categories && 'Loading...' }
   
           {
             categories &&
-            <ul>{ categories.map(this.renderCategorie) }</ul>
+            <ul>{ categories.map(this.renderCategory) }</ul>
           }
         </div>
       )
